@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.softserve.edu.ita">
+ 
+    <class name="Order" table="order">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="id" type="int" column="id"/>
+        <property name="productId" type="int" column="productID"/>
+        <property name="clientId" type="int" column="clientID"/>
+        <property name="date" type="timestamp" column="date"/>
+        <property name="count" type="int" column="count"/>
+    </class>
+ 
+</hibernate-mapping>
