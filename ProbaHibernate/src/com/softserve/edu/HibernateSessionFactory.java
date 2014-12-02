@@ -26,13 +26,13 @@ public class HibernateSessionFactory {
     private static String CONFIG_FILE_LOCATION = "hibernate.cfg.xml";
 
     /** Holds a single instance of Session */
-    private static final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
+    private static ThreadLocal<Session> threadLocal;
 
     /** The single instance of hibernate configuration */
     private static final Configuration cfg = new Configuration().configure(CONFIG_FILE_LOCATION);
     private static StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().
             applySettings(cfg.getProperties());
-        private static SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
     /** The single instance of hibernate SessionFactory */
    // private static org.hibernate.SessionFactory sessionFactory;
 
@@ -44,8 +44,9 @@ public class HibernateSessionFactory {
      *  @throws HibernateException
      */
     public static Session currentSession() throws HibernateException {
-        Session session = (Session)threadLocal.get();
-
+    	threadLocal = new ThreadLocal<Session>();
+    	Session session = (Session)threadLocal.get();
+        
         if (session == null) {
 //            if (sessionFactory == null) {
                 try {
@@ -70,7 +71,8 @@ public class HibernateSessionFactory {
      *  @throws HibernateException
      */
     public static void closeSession() throws HibernateException {
-        Session session = (Session) threadLocal.get();
+    	threadLocal  = new ThreadLocal<Session>();
+    	Session session = (Session) threadLocal.get();
         threadLocal.set(null);
 
         if (session != null) {
@@ -85,3 +87,15 @@ public class HibernateSessionFactory {
     }
 
 }
+
+
+    
+   
+  
+
+    
+        
+
+       
+
+ 
