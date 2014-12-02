@@ -29,7 +29,7 @@ public class HibernateSessionFactory {
     private static final ThreadLocal<Session> threadLocal = new ThreadLocal<Session>();
 
     /** The single instance of hibernate configuration */
-    private static final Configuration cfg = new Configuration().configure();
+    private static final Configuration cfg = new Configuration().configure(CONFIG_FILE_LOCATION);
     private static StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().
             applySettings(cfg.getProperties());
         private static SessionFactory sessionFactory;
