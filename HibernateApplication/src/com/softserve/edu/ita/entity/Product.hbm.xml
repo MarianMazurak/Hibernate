@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
- 
-<hibernate-mapping package="com.softserve.edu.ita">
- 
-    <class name="Product" table="product">
-        <id name="id" column="id">
-            <generator class="increment"/>
-        </id>
-        <property name="name" type="java.lang.String" column="name"/>
-        <property name="maker" type="java.lang.String" column="maker"/>
-        <property name="country" type="java.lang.String" column="country"/>
-        <property name="price" type="decimal" column="maker"/>
-    </class>
- 
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping>
+	<class name="com.softserve.edu.ita.entity.Product" table="products">
+		<id name="id" type="java.lang.Long">
+			<column name="id" />
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String"><column name="name" />
+		</property>
+		<property name="maker" type="java.lang.String"><column name="maker" />
+		</property>
+		<property name="country" type="java.lang.String"><column name="country" />
+		</property>
+		<property name="price" type="java.lang.Float"><column name="price" />
+		</property>
+		<set name="productOrderSet" table="orders" inverse="false" lazy="false">
+			<key>
+				<column name="productID" />
+			</key>
+			<one-to-many class="com.softserve.edu.ita.entity.Order" />
+		</set>
+	</class>
 </hibernate-mapping>

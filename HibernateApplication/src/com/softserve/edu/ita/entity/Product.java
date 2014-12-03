@@ -1,11 +1,14 @@
 package com.softserve.edu.ita.entity;
 
+import java.util.Set;
+
 public class Product {
 	private int id;
 	private String name;
 	private String maker;
 	private String country;
 	private float price;
+	private Set<Order> productOrderSet;
 	public Product() {
 		super();
 	}
@@ -38,6 +41,12 @@ public class Product {
 	}
 	public void setPrice(float price) {
 		this.price = price;
+	}
+	public Set<Order> getProductOrderSet() {
+		return productOrderSet;
+	}
+	public void setProductOrderSet(Set<Order> productOrderSet) {
+		this.productOrderSet = productOrderSet;
 	}
 
 }
