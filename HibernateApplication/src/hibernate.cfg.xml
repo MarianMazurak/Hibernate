@@ -20,8 +20,8 @@
 			org.hibernate.dialect.MySQLDialect
 		</property>
 
-		<mapping resource="com/softserve/edu/entity/Product.hbm.xml" />
-		<mapping resource="com/softserve/edu/entity/Client.hbm.xml" />
-		<mapping resource="com/softserve/edu/entity/Order.hbm.xml" />
+		<mapping resource="com/softserve/edu/ita/entity/Product.hbm.xml" />
+		<mapping resource="com/softserve/edu/ita/entity/Client.hbm.xml" />
+		<mapping resource="com/softserve/edu/ita/entity/Order.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

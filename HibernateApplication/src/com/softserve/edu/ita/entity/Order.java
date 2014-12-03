@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class Order {
 	private int id;
-	private int productId;
-	private int clientId;
+	private Product productId;
+	private Client clientId;
 	private Date date;
 	private int count;
 	public Order() {
@@ -17,20 +17,20 @@ public class Order {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getProductId() {
-		return productId;
-	}
-	public void setProductId(int productId) {
-		this.productId = productId;
-	}
-	public int getClientId() {
-		return clientId;
-	}
-	public void setClientId(int clientId) {
-		this.clientId = clientId;
-	}
 	public Date getDate() {
 		return date;
+	}
+	public Product getProductId() {
+		return productId;
+	}
+	public void setProductId(Product productId) {
+		this.productId = productId;
+	}
+	public Client getClientId() {
+		return clientId;
+	}
+	public void setClientId(Client clientId) {
+		this.clientId = clientId;
 	}
 	public void setDate(Date date) {
 		this.date = date;
