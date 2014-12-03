@@ -1,4 +1,4 @@
-package com.softserve.edu.ita;
+package com.softserve.edu.ita.entity;
 
 import java.sql.Date;
 

@@ -1,10 +1,12 @@
-package com.softserve.edu.ita;
+package com.softserve.edu.ita.entity;
 
-public class Client {
+public class Product {
 	private int id;
 	private String name;
+	private String maker;
 	private String country;
-	public Client() {
+	private float price;
+	public Product() {
 		super();
 	}
 	public int getId() {
@@ -19,12 +21,23 @@ public class Client {
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getMaker() {
+		return maker;
+	}
+	public void setMaker(String maker) {
+		this.maker = maker;
+	}
 	public String getCountry() {
 		return country;
 	}
 	public void setCountry(String country) {
 		this.country = country;
 	}
-	
+	public float getPrice() {
+		return price;
+	}
+	public void setPrice(float price) {
+		this.price = price;
+	}
 
 }
